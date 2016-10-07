@@ -48,7 +48,7 @@ var app = {
         window.plugins.OneSignal.startInit( "338ecc0f-8620-437d-9ed3-9cd12d5976d9", "565071945004")
                                 .handleNotificationReceived(didReceiveRemoteNotificationCallBack)
                                 .handleNotificationOpened(didOpenRemoteNotificationCallBack)
-//                          .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.Notification)
+                       .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.None)
                                 .iOSSettings(iosSettings)
                                 .endInit();
         
@@ -65,8 +65,8 @@ var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/fr7/index.php?ipu
 function didReceiveRemoteNotificationCallBack(jsonData) {
     alert('RECEIVE: ' + JSON.stringify(jsonData));
     }
-function didOpenRemoteNotificationCallBack (jsonData) {
-    alert('OPEN: ' + jsonData.payload.title);
+function didOpenRemoteNotificationCallBack (OSNotificationPayload) {
+    alert('OPEN: ' + OSNotificationPayload.title);
     }
 
 app.initialize();
