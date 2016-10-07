@@ -51,13 +51,14 @@ var app = {
                                 .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.Notification)
                                 .iOSSettings(iosSettings)
                                 .endInit();
-var ipush="";
+        
+        
             window.plugins.OneSignal.getIds(function(ids) {
 ipush = ids.userId;
+var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/fr7/index.php?ipush='+ipush, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
     });
         
         
-var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/fr7/index.php?ipush='+ipush, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
     }
 };
 
