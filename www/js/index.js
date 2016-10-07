@@ -39,7 +39,7 @@ var app = {
     receivedEvent: function(id) {
         
                 // Enable to debug issues.
-window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+//window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
 
         var iosSettings = {};
         iosSettings["kOSSettingsKeyAutoPrompt"] = true;
@@ -58,10 +58,10 @@ var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/fr7/index.php', '
 };
 
 function didReceiveRemoteNotificationCallBack(jsonData) {
-    alert(jsonData.additionalData.ssylka + 'didReceiveRemoteNotificationCallBack');
+    alert(JSON.stringify(jsonData) +"didReceiveRemoteNotificationCallBack");
     }
 function didOpenRemoteNotificationCallBack (jsonData) {
-       alert(jsonData.additionalData.ssylka + 'didOpenRemoteNotificationCallBack');
+       alert(JSON.stringify(jsonData));
     }
 
 function sendTag() {
