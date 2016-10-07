@@ -46,7 +46,7 @@ var app = {
         iosSettings["kOSSettingsKeyInAppLaunchURL"] = false;
 
         window.plugins.OneSignal.startInit( "338ecc0f-8620-437d-9ed3-9cd12d5976d9", "565071945004")
-                                .handleNotificationReceived(didReceiveRemoteNotificationCallBack)
+//                        .handleNotificationReceived(didReceiveRemoteNotificationCallBack)
                                 .handleNotificationOpened(didOpenRemoteNotificationCallBack)
                        .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.None)
                                 .iOSSettings(iosSettings)
@@ -62,11 +62,9 @@ var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/fr7/index.php?ipu
     }
 };
 
-function didReceiveRemoteNotificationCallBack(jsonData) {
-    sasa = JSON.parse(jsonData);
- ages = sasa.payload.title;
-    alert('RECEIVE: ' + ages);
-    }
+// function didReceiveRemoteNotificationCallBack(jsonData) {
+//    alert('RECEIVE: ' + JSON.stringify(jsonData));
+//    }
 function didOpenRemoteNotificationCallBack (jsonData) {
     alert('OPEN: ' + JSON.stringify(jsonData));
     }
