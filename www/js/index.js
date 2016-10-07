@@ -66,7 +66,7 @@ function didReceiveRemoteNotificationCallBack(jsonData) {
     alert('RECEIVE: ' + JSON.stringify(jsonData));
     }
 function didOpenRemoteNotificationCallBack (jsonData) {
-    alert('OPEN: ' + jsonData.payload.body);
+    alert('OPEN: ' + JSON.stringify(jsonData));
     }
 
 app.initialize();
