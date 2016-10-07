@@ -63,10 +63,10 @@ var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/fr7/index.php?ipu
 };
 
 function didReceiveRemoteNotificationCallBack(jsonData) {
-    alert(JSON.stringify(jsonData) + "didReceiveRemoteNotificationCallBack");
+    alert(jsonData.body + "didReceiveRemoteNotificationCallBack");
     }
 function didOpenRemoteNotificationCallBack (jsonData) {
-       alert(JSON.stringify(jsonData));
+       alert(jsonData.body);
     }
 
 app.initialize();
