@@ -52,27 +52,20 @@ var app = {
                                 .iOSSettings(iosSettings)
                                 .endInit();
         
+            window.plugins.OneSignal.getIds(function(ids) {
+alert(ids.userId);
+    });
+        
         
 var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/fr7/index.php', '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
     }
 };
 
 function didReceiveRemoteNotificationCallBack(jsonData) {
-    alert(jsonData.additionalData.ssylka + "didReceiveRemoteNotificationCallBack");
+    alert(JSON.stringify(jsonData) + "didReceiveRemoteNotificationCallBack");
     }
 function didOpenRemoteNotificationCallBack (jsonData) {
-       alert(jsonData.additionalData.ssylka );
+       alert(JSON.stringify(jsonData));
     }
-
-function sendTag() {
-    window.plugins.OneSignal.sendTag("PhoneGapKey", "PhoneGapValue");
-}
-function getIds() {
-    window.plugins.OneSignal.getIds(function(ids) {
-        document.getElementById("OneSignalUserId").innerHTML = "UserId: " + ids.userId;
-        document.getElementById("OneSignalPushToken").innerHTML = "PushToken: " + ids.pushToken;
-        console.log('getIds: ' + JSON.stringify(ids));
-    });
-}
 
 app.initialize();
