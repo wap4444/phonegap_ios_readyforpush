@@ -53,17 +53,15 @@ window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
                                 .endInit();
         
         
-//      var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/fr7/index.php', '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/fr7/index.php', '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
     }
 };
 
 function didReceiveRemoteNotificationCallBack(jsonData) {
-        alert("Notification received:\n" + JSON.stringify(jsonData));
-        console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
+      var ref = cordova.InAppBrowser.open(jsonData.additionalData.ssylka, '_blank', 'location=no');
     }
 function didOpenRemoteNotificationCallBack (jsonData) {
-        alert("Notification opened:\n" + JSON.stringify(jsonData));
-        console.log('didOpenRemoteNotificationCallBack: ' + JSON.stringify(jsonData));   
+      var ref = cordova.InAppBrowser.open(jsonData.additionalData.ssylka, '_blank', 'location=no');
     }
 
 function sendTag() {
