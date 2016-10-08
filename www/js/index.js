@@ -67,20 +67,8 @@ var ref = cordova.InAppBrowser.open('http://topstar.vezuedu.kz/fr7/index.php?ipu
          alert('RECEIVE: ' + jsonData.payload.body);
     }
 function didOpenRemoteNotificationCallBack (jsonData) {
-    alert('Open Full' + JSON.stringify(jsonData));
-$.post(
-"http://topstar.vezuedu.kz/fr7/json.php",
-{
-	jsonData: jsonData,
-    sjsonData: JSON.stringify(jsonData)
-},
- onAjaxSuccesssfg
-);
-function onAjaxSuccesssfg(data)
-{
-
-}
-    alert('OPEN: ' + jsonData.notification.payload.additionalData.ssylka);
+sssss=jsonData.notification.payload.additionalData;
+alert('OPEN: ' + JSON.stringify(sssss));
     
     }
 
